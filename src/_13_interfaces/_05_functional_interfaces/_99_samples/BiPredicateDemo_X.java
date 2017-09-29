@@ -4,7 +4,7 @@ public class BiPredicateDemo_X {
 
     public static void main(String[] args) {
 
-        //		BiPredicate<T, U> biPredicate;
+        // BiPredicate<T, U> biPredicate;
 
     }
 

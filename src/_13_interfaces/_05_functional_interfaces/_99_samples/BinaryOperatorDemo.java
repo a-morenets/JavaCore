@@ -8,14 +8,14 @@ import java.util.stream.Collectors;
 public class BinaryOperatorDemo {
 
     public static void main(String[] args) {
-        String str = "abcbbccbab";
 
         // BinaryOperator<T> binaryOperator;
         BinaryOperator<Integer> binaryOperator = (v1, v2) -> v1 + v2;
 
-        Map<Character, Integer> charsFreqMap = str.chars()
+        Map<Character, Integer> charsFreqMap = "abcbbccbab".chars()
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.toMap(Function.identity(), v -> 1, binaryOperator));
+
         System.out.println("charsFreqMap = " + charsFreqMap);
     }
 

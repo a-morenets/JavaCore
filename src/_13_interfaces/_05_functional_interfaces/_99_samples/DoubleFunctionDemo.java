@@ -1,21 +1,20 @@
 package _13_interfaces._05_functional_interfaces._99_samples;
 
-import java.util.Arrays;
 import java.util.function.DoubleFunction;
 import java.util.stream.DoubleStream;
-import java.util.stream.Stream;
 
 public class DoubleFunctionDemo {
 
     public static void main(String[] args) {
-        double[] arr = {5.2, 1.0, 3.1};
 
-        //		DoubleFunction<R> doubleFunction;
-        DoubleFunction<DoubleStream> doubleFunction = value -> DoubleStream.of(arr);
+        // DoubleFunction<R> doubleFunction;
+        DoubleFunction<DoubleStream> doubleFunction = value -> DoubleStream
+                .iterate(value, operand -> operand + 1)
+                .limit(3);
 
-        Arrays.stream(arr)
+        DoubleStream.of(5.2, 1.0, 3.1)
                 .flatMap(doubleFunction)
-                .forEach(value -> System.out.println(value + ": "));
+                .forEach(System.out::println);
     }
 
 }

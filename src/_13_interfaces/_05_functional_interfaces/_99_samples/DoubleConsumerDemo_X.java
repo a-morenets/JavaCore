@@ -6,7 +6,7 @@ public class DoubleConsumerDemo_X {
 
     public static void main(String[] args) {
 
-        //		DoubleConsumer doubleConsumer;
+        // DoubleConsumer doubleConsumer;
         DoubleConsumer doubleConsumer;
 
     }

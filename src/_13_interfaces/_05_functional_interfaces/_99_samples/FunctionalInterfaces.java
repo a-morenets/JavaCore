@@ -7,12 +7,6 @@ import java.util.stream.Collectors;
 public class FunctionalInterfaces {
 
 	public static void main(String[] args) {
-//		DoublePredicate doublePredicate;
-//		DoubleSupplier doubleSupplier;
-//		DoubleToIntFunction doubleToIntFunction;
-//		DoubleToLongFunction doubleToLongFunction;
-//		DoubleUnaryOperator doubleUnaryOperator;
-//		Function<T, R> function;
 //		IntBinaryOperator intBinaryOperator;
 //		IntConsumer intConsumer;
 //		IntFunction<R> intFunction;

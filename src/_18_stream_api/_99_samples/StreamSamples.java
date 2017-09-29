@@ -1,10 +1,13 @@
 package _18_stream_api._99_samples;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class StreamSamples {
@@ -12,7 +15,7 @@ public class StreamSamples {
     public static void main(String[] args) {
         int[] arrInt = {1, 2, 3};
 //		Stream<Integer> integerStream = Stream.of(arrInt); // error
-        Stream<int[]> streamInt = Stream.of(arrInt); // stream of int[] objects!!!
+        Stream<int[]> streamInt = Stream.of(arrInt); // stream of one int[] object!!!
         streamInt.forEach(s -> System.out.println(s + ": " + s.getClass())); // [1, 2, 3]: class [I
 
         Integer[] arrInteger = {5, 3, null, 4, 9, 7};
@@ -58,6 +61,18 @@ public class StreamSamples {
                 .mapToObj(c -> (char) c)
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
         System.out.println("charsFreqLongMap = " + charsFreqLongMap);
+
+        ///////////////////////
+        IntStream.generate(() -> (int) (100 * Math.random()))
+                .limit(10)
+                .sorted()
+                .forEach(System.out::println);
+
+        ///////////////////////
+        double[][] doubles = {{5.8, 1.2}, {0.8, 9.9, 6.7}, {5.5}};
+        Stream.of(doubles) // Stream<double[]>
+            .flatMapToDouble(Arrays::stream) // DoubleStream
+            .forEach(System.out::println);
     }
 
 }
