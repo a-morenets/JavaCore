@@ -18,6 +18,7 @@ public class _Misc {
             }
             this.book.add(book);
         }
+
         //getters and setters
 
         public String getName() {
@@ -69,10 +70,15 @@ public class _Misc {
 
         // получить все числовые значения, которые хранятся через запятую в collection
         String[] number = collection.stream()
-//                .flatMap((p) -> Arrays.asList(p.split(",")).stream())
                 .flatMap(p -> Arrays.stream(p.split(",")))
                 .toArray(String[]::new);
         System.out.println("number = " + Arrays.toString(number)); // напечатает number = [1, 2, 0, 4, 5]
+
+        // Вычисть к каждого элемента 1 и получить среднее
+        Collection<Integer> numbers = Arrays.asList(1, 2, 3, 4);
+        double average = numbers.stream()
+                .collect(Collectors.averagingInt((p) -> p - 1));
+        System.out.println("average = " + average); // напечатает average = 1.5
     }
 
 }
