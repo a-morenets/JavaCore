@@ -155,77 +155,86 @@ public class FileIODemo {
 
 		// 4.1
 		// Object streams (object must implement Serializable)
-		List<User> u1 = new ArrayList<>();
-		List<User> u2 = new LinkedList<>();
+        ArrayList<User> userArrayList = new ArrayList<>();
+        LinkedList<User> userLinkedList = new LinkedList<>();
 
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("User.ser"))) {
-			u1.add(new User("Петя", 25));
-			u1.add(new User("Коля", 34));
-			u1.add(new User("Николай", 53));
+			userArrayList.add(new User("Петя", 25));
+			userArrayList.add(new User("Коля", 34));
+			userArrayList.add(new User("Николай", 53));
 
-			u2.add(new User("Женя", 42));
-			u2.add(new User("Александр", 21));
+			userLinkedList.add(new User("Женя", 42));
+			userLinkedList.add(new User("Александр", 21));
 
 			// write objects one after another
 			
-			for (User user : u1) {
-				oos.writeObject(user);
-			}
-			
-			for (User user : u2) {
-				oos.writeObject(user);
-			}
+			for (User user : userArrayList) {
+                oos.writeObject(user);
+            }
 
-			// write whole Lists
-			oos.writeObject(u1); // ArrayList
-			oos.writeObject(u2); // LinkedList
+            // write whole Lists
+            oos.writeObject(userArrayList); // ArrayList
+            oos.writeObject(userLinkedList); // LinkedList
 
-			// Add some data
-			u2.add(new User("+ Александр", 21));
-			u2.add(new User("+ Маша", 11));
-			u2.add(new User("+ Саша", 24));
-			u2.add(new User("+ Олег", 25));
-			u2.add(new User("+ Оля", 27));
+            for (User user : userLinkedList) {
+                oos.writeObject(user);
+            }
 
-			// now LinkedList contains 2 + 5 = 7 elements
-			oos.writeObject(u2); // LinkedList
+            // Add some data to ArrayList
+            userArrayList.add(new User("+ Маша", 11));
+            userArrayList.add(new User("+ Саша", 24));
+            System.out.println(userArrayList);
+
+            // Add some data to LinkedList
+            userLinkedList.add(new User("+ Александр", 21));
+            System.out.println(userLinkedList);
+
+            // now ArrayList contains 3 + 2 = 5 elements
+            oos.writeUnshared(userArrayList); // ArrayList - writeUnshared !!!
+
+            // now LinkedList contains 2 + 1 = 3 elements
+            oos.writeUnshared(userLinkedList); // LinkedList - writeUnshared !!!
 
 			oos.flush();
 			System.out.println("Объекты сохранены");
-			
+
 		} catch (FileNotFoundException fNFex) {
 			System.out.println(fNFex);
-		} catch (IOException iOex) {
-			System.out.println(iOex);
 		}
 
-		try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("User.ser"))) {
+        System.out.println("Читаем объекты...");
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("User.ser"))) {
 
 			// read objects one after another
 			// IOException will occur when nothing to read
-			for (int i = 0; i < 5; i++) {
+			for (int i = 0; i < 3; i++) {
 				User user = (User) ois.readObject();
 				System.out.println(user);
 			}
 
 			// read whole Lists
-			List<User> u1in = null;
-			List<User> u2in = null;
-			u1in = (List) ois.readObject(); // ArrayList
-			u2in = (List) ois.readObject(); // LinkedList
-			System.out.println(u1in);
-			System.out.println(u2in);
 
-			List<User> u3in = null;
-			u3in = (List) ois.readObject(); // LinkedList with added elements
-			System.out.println(u3in);
+            ArrayList<User> u1in = (ArrayList<User>) ois.readObject(); // ArrayList
+            System.out.println(u1in);
 
-			System.out.println("Объекты восстановлены");
+            LinkedList<User> u2in = (LinkedList<User>) ois.readObject(); // LinkedList
+            System.out.println(u2in);
+
+            for (int i = 0; i < 2; i++) {
+                User user = (User) ois.readObject();
+                System.out.println(user);
+            }
+
+            ArrayList<User> u4in = (ArrayList<User>) ois.readObject(); // ArrayList with added elements
+            System.out.println(u4in);
+
+            LinkedList<User> u3in = (LinkedList<User>) ois.readObject(); // LinkedList with added elements
+            System.out.println(u3in);
+
+            System.out.println("Объекты восстановлены");
 			
 		} catch (FileNotFoundException fNFex) {
 			System.out.println("FNF Error!");
-		} catch (IOException iOex) {
-			System.out.println("IO Error!");
 		} catch (ClassNotFoundException cNFex) {
 			System.out.println("CNF Error!");
 		}
@@ -233,12 +242,12 @@ public class FileIODemo {
 		// 5.1
 		// Data streams
 		System.out.println("------------------------------");
-		DataOutput dout = null;
+		DataOutput dOut;
 		try {
-			dout = new DataOutputStream(new FileOutputStream("5_1.txt"));
+			dOut = new DataOutputStream(new FileOutputStream("5_1.txt"));
 			for (int i = 0; i < 10; i++) {
 				double d = Math.random();
-				dout.writeDouble(d);
+				dOut.writeDouble(d);
 				System.out.println(d);
 			}
 //			dout.flush();
@@ -250,7 +259,7 @@ public class FileIODemo {
 		}
 
 		System.out.println("------------------------------");
-		DataInput din = null;
+		DataInput din;
 		try {
 			din = new DataInputStream(new FileInputStream("5_1.txt"));
 			for (int i = 0; i < 10; i++) {

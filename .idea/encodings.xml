@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/User.ser" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_03_operations/_00_priority/OperationsPriority.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_04_arrays/_04_skills/Skills.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_08_effectively_final/EffectivelyFinalVariablesDemo.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_18_stream_api/_99_samples/collectors/employees/Main.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_19_io/_02_file_in_out/FileIODemo.java" charset="windows-1251" />
   </component>
 </project>
