@@ -52,33 +52,47 @@ public class Java8Tester {
 			System.out.println(random.nextInt());
 		}
 
-		System.out.println(); ///////////////////////////////// -= Java 8 =-
-								///////////////////////////////// //////////////////////////////////////////
+		System.out.println();
+
+		///////////////////////////////// -= Java 8 =- /////////////////////////////////
+
 		System.out.println("Using Java 8: ");
 
 		System.out.println("List: " + strings);
 
 		// Count empty strings
-		count = strings.stream().filter(string -> string.isEmpty()).count();
+		count = strings.stream()
+				.filter(String::isEmpty).count();
 		System.out.println("Empty Strings: " + count);
 
-		count = strings.stream().filter(string -> string.length() == 3).count();
+		count = strings.stream()
+				.filter(string -> string.length() == 3)
+				.count();
 		System.out.println("Strings of length 3: " + count);
 
 		// Eliminate empty string
-		filtered = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.toList());
+		filtered = strings.stream()
+                .filter(string -> !string.isEmpty())
+                .collect(Collectors.toList());
 		System.out.println("Filtered List: " + filtered);
 
 		// Eliminate empty string and join using comma.
-		mergedString = strings.stream().filter(string -> !string.isEmpty()).collect(Collectors.joining(", "));
+		mergedString = strings.stream()
+                .filter(string -> !string.isEmpty())
+                .collect(Collectors.joining(", "));
 		System.out.println("Merged String: " + mergedString);
 
 		// get list of square of distinct numbers
-		squaresList = numbers.stream().map(i -> i * i).distinct().collect(Collectors.toList());
+		squaresList = numbers.stream()
+                .map(i -> i * i)
+                .distinct()
+                .collect(Collectors.toList());
 		System.out.println("Squares List: " + squaresList);
 		System.out.println("List: " + integers);
 
-		IntSummaryStatistics stats = integers.stream().mapToInt((x) -> x).summaryStatistics();
+		IntSummaryStatistics stats = integers.stream()
+                .mapToInt((x) -> x)
+                .summaryStatistics();
 
 		System.out.println("Highest number in List : " + stats.getMax());
 		System.out.println("Lowest number in List : " + stats.getMin());
@@ -87,22 +101,34 @@ public class Java8Tester {
 		System.out.println("Random Numbers: ");
 
 		// print ten random numbers
-		random.ints().limit(10).sorted().forEach(System.out::println);
+		random.ints()
+                .limit(10)
+                .sorted()
+                .forEach(System.out::println);
 
 		// parallel processing
-		count = strings.parallelStream().filter(string -> string.isEmpty()).count();
+		count = strings.parallelStream()
+                .filter(String::isEmpty)
+                .count();
 		System.out.println("Empty Strings: " + count);
 
 		// peek()
-		strings.stream().map(String::toUpperCase).peek(e -> System.out.print(e + ", ")).collect(Collectors.toList());
+		strings.stream()
+                .map(String::toUpperCase)
+                .peek(e -> System.out.print(e + ", "));
 		System.out.println();
 
 		// flatMap()
-		String[] newStrings = strings.stream().flatMap((p) -> Arrays.asList(p.split(",")).stream()).toArray(String[]::new);
+		String[] newStrings = strings.stream()
+                .flatMap(p -> Arrays.stream(p.split(","))).toArray(String[]::new);
 		System.out.println(Arrays.toString(newStrings));
 		
 		// Sum of all numbers
-		System.out.println(integers.stream().reduce((s1, s2) -> s1 + s2).orElse(0));
+		System.out.println(
+		        integers.stream()
+                .reduce((s1, s2) -> s1 + s2)
+                .orElse(0)
+        );
 	}
 
 	// Helper methods for Java 7
@@ -111,7 +137,6 @@ public class Java8Tester {
 		int count = 0;
 
 		for (String string : strings) {
-
 			if (string.isEmpty()) {
 				count++;
 			}
@@ -123,7 +148,6 @@ public class Java8Tester {
 		int count = 0;
 
 		for (String string : strings) {
-
 			if (string.length() == 3) {
 				count++;
 			}
@@ -135,7 +159,6 @@ public class Java8Tester {
 		List<String> filteredList = new ArrayList<String>();
 
 		for (String string : strings) {
-
 			if (!string.isEmpty()) {
 				filteredList.add(string);
 			}
@@ -147,7 +170,6 @@ public class Java8Tester {
 		StringBuilder stringBuilder = new StringBuilder();
 
 		for (String string : strings) {
-
 			if (!string.isEmpty()) {
 				stringBuilder.append(string);
 				stringBuilder.append(separator);
@@ -161,7 +183,7 @@ public class Java8Tester {
 		List<Integer> squaresList = new ArrayList<Integer>();
 
 		for (Integer number : numbers) {
-			Integer square = new Integer(number.intValue() * number.intValue());
+			Integer square = number * number;
 
 			if (!squaresList.contains(square)) {
 				squaresList.add(square);
@@ -174,11 +196,10 @@ public class Java8Tester {
 		int max = numbers.get(0);
 
 		for (int i = 1; i < numbers.size(); i++) {
-
 			Integer number = numbers.get(i);
 
-			if (number.intValue() > max) {
-				max = number.intValue();
+			if (number > max) {
+				max = number;
 			}
 		}
 		return max;
@@ -190,8 +211,8 @@ public class Java8Tester {
 		for (int i = 1; i < numbers.size(); i++) {
 			Integer number = numbers.get(i);
 
-			if (number.intValue() < min) {
-				min = number.intValue();
+			if (number < min) {
+				min = number;
 			}
 		}
 		return min;

@@ -4,7 +4,12 @@ public class Student extends Person {
 	private String major;
 
 	public Student(String name, String major) {
+
+		// Call the default Constructor of the parent class (Person).
+		// For the purpose of assigning values to fields of superclass.
 		super(name);
+
+        // Next, Assign values to its fields.
 		this.major = major;
 	}
 

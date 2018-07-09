@@ -76,9 +76,9 @@ public class Integers {
         int intDec, intBin, intOct, intHex;
 
         // decimal
-        intDec = -2147483648;
+        intDec = -2_147_483_648;
         System.out.println(intDec);
-        intDec = 2147483647;
+        intDec = 2_147_483_647;
         System.out.println(intDec);
 
         // binary
@@ -107,9 +107,9 @@ public class Integers {
         long longDec, longBin, longOct, longHex;
 
         // decimal
-        longDec = -9223372036854775808L;
+        longDec = -9_223_372_036_854_775_808L;
         System.out.println(longDec);
-        longDec = 9223372036854775807L;
+        longDec = 9_223_372_036_854_775_807L;
         System.out.println(longDec);
 
         // binary

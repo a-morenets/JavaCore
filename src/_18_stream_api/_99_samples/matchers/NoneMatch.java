@@ -9,7 +9,9 @@ public class NoneMatch {
 	}
 
 	void printPrimesInRange(int from, int to) {
-		IntStream.range(from, to).filter(this::isPrime).forEach(System.out::println);
+		IntStream.range(from, to)
+				.filter(this::isPrime)
+				.forEach(System.out::println);
 	}
 
 	public static void main(String[] args) {

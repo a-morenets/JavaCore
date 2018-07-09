@@ -6,8 +6,8 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class StreamSamples {
@@ -16,15 +16,17 @@ public class StreamSamples {
         int[] arrInt = {1, 2, 3};
 //		Stream<Integer> integerStream = Stream.of(arrInt); // error
         Stream<int[]> streamInt = Stream.of(arrInt); // stream of one int[] object!!!
-        streamInt.forEach(s -> System.out.println(s + ": " + s.getClass())); // [1, 2, 3]: class [I
+        streamInt
+                .forEach(s -> System.out.println(s + ": " + s.getClass())); // [1, 2, 3]: class [I
 
         Integer[] arrInteger = {5, 3, null, 4, 9, 7};
-        Stream<Integer> integerStream = Stream.of(arrInteger);
-        integerStream
+        Stream<Integer> streamInteger = Stream.of(arrInteger);
+        streamInteger
                 .filter(Objects::nonNull)
                 .forEach(s -> System.out.println(s + ": " + s.getClass())); // {value}: class java.lang.Integer
 
         Stream.of(arrInteger)
+//                .filter(x -> x.equals(Integer.valueOf(5))) // NPE if x == null
                 .filter(x -> Integer.valueOf(5).equals(x))
                 .forEach(System.out::println);
         // or
@@ -42,7 +44,7 @@ public class StreamSamples {
         String[] strings = {"abc", "de", "fghij", "", "klmnop"};
         Stream.of(strings)
                 .map(String::toUpperCase)
-                .peek((e) -> System.out.print(e + " "))
+                .peek(e -> System.out.print(e + " "))
 //                .map(s -> s.length()) // or
 //                .map(String::length) // or
                 .mapToInt(String::length)
@@ -71,8 +73,37 @@ public class StreamSamples {
         ///////////////////////
         double[][] doubles = {{5.8, 1.2}, {0.8, 9.9, 6.7}, {5.5}};
         Stream.of(doubles) // Stream<double[]>
-            .flatMapToDouble(Arrays::stream) // DoubleStream
-            .forEach(System.out::println);
+                .flatMapToDouble(Arrays::stream) // DoubleStream
+                .forEach(System.out::println);
+
+        ////////////////////// Сиракузская последовательность
+        IntStream.iterate(1000, i -> i % 2 == 0 ? i / 2 : i * 3 + 1)
+                .limit(150)
+                .forEach(System.out::println);
+
+        // Factorials
+        long n = 6;
+        System.out.println(n + "! = " + factorialRec(n));
+        System.out.println(n + "! = " + factorialIter(n));
+
+        int[] numbers = {1, 2, 3, 4};
+        String commaSeparatedNumbers = Arrays.stream(numbers)
+//                .boxed().map(Object::toString)
+                .mapToObj(Integer::toString)
+                .collect(Collectors.joining(", "));
+    }
+
+    // Factorial (recursive)
+    static long factorialRec(long number) {
+        Function<Long, Long> fact = n -> n > 1 ? n * factorialRec(n - 1) : 1;
+        return fact.apply(number);
+    }
+
+    // Factorial (iterative)
+    static long factorialIter(long n) {
+        return LongStream.rangeClosed(1, n)
+                .reduce((left, right) -> left * right)
+                .getAsLong();
     }
 
 }

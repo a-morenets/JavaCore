@@ -16,11 +16,9 @@ public class Main {
                 new Employee("Иван", 33)
         );
 
-        Map<Integer, List<Employee>> employeesMap = employees
-                .stream()
-                .collect(Collectors.groupingBy(Employee::getAge));
-
-        employeesMap.forEach((age, e) -> System.out.printf("Возраст %s: %s\n", age, e));
+        employees.stream()
+                .collect(Collectors.groupingBy(Employee::getAge)) // Map<Integer, List<Employee>>
+                .forEach((age, employeeList) -> System.out.printf("Возраст %s: %s\n", age, employeeList));
 //        Возраст 33: [Максим, Иван]
 //        Возраст 18: [Александр]
 //        Возраст 25: [Алексей]

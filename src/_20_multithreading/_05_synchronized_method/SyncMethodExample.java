@@ -1,6 +1,6 @@
 package _20_multithreading._05_synchronized_method;
 
-public class SynchMethodExample {
+public class SyncMethodExample {
 
 	public static void main(String[] args) {
 		CallMe target = new CallMe();

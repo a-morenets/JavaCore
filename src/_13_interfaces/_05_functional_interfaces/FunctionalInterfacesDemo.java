@@ -73,6 +73,7 @@ public class FunctionalInterfacesDemo {
      * @param args
      */
     public static void main(String[] args) {
+
         /* Predicate<T> */
         // test if positive
         Predicate<Integer> isPositive = x -> x > 0;
@@ -96,7 +97,7 @@ public class FunctionalInterfacesDemo {
 
         /* Function<T, R> */
         // cast String -> Integer
-        Function<String, Integer> strToInt = s -> Integer.parseInt(s);
+        Function<String, Integer> strToInt = Integer::parseInt;
         System.out.println(cast(strToInt, "100500")); // 100500 (int)
 
         /* Consumer<T> */

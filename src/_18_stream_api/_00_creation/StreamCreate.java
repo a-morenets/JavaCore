@@ -13,11 +13,10 @@ import java.util.stream.Stream;
 
 /**
  * https://habrahabr.ru/company/luxoft/blog/270383/
- *
  */
 public class StreamCreate {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
         System.out.println("Test buildStream start");
 
         // Создание стрима из значений
@@ -25,7 +24,7 @@ public class StreamCreate {
         System.out.println("streamFromValues = " + streamFromValues.collect(Collectors.toList())); // напечатает streamFromValues = [a1, a2, a3]
 
         // Создание стрима из массива
-        String[] array = {"a1","a2","a3"};
+        String[] array = {"a1", "a2", "a3"};
         Stream<String> streamFromArrays = Arrays.stream(array);
         System.out.println("streamFromArrays = " + streamFromArrays.collect(Collectors.toList())); // напечатает streamFromArrays = [a1, a2, a3]
 
@@ -57,7 +56,11 @@ public class StreamCreate {
 
         // С помощью Stream.builder
         Stream.Builder<String> builder = Stream.builder();
-        Stream<String> streamFromBuilder = builder.add("a1").add("a2").add("a3").build();
+        Stream<String> streamFromBuilder = builder
+                .add("a1")
+                .add("a2")
+                .add("a3")
+                .build();
         System.out.println("streamFromBuilder = " + streamFromBuilder.collect(Collectors.toList())); // напечатает streamFromFiles = [a1, a2, a3]
 
         // Создание бесконечных стримов
@@ -76,6 +79,6 @@ public class StreamCreate {
         // Создать параллельный стрим из коллекции
         Stream<String> parallelStream = collection.parallelStream();
         System.out.println("parallelStream = " + parallelStream.collect(Collectors.toList())); // напечатает parallelStream = [a1, a2, a3]
-	}
+    }
 
 }
