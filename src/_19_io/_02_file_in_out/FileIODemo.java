@@ -44,6 +44,8 @@ public class FileIODemo {
 			int numBytes;
 			while ((numBytes = is.read(buff)) != -1) { // numBytes = number of bytes read
 				System.out.print(numBytes + " ");
+				String s = new String(buff, 0, numBytes);
+				System.out.println(s);
 				os.write(buff, 0, numBytes);
 			}
 			System.out.println("\n========================================================");
@@ -99,7 +101,7 @@ public class FileIODemo {
 			char[] cbuf = new char[bufSize];
 			int numBytes;
 			while ((numBytes = reader.read(cbuf)) != -1) { // numBytes = number of bytes read
-				System.out.println(cbuf); // Может вывести мусор, если последняя читанная порция меньше чем блок
+				System.out.println(cbuf); // Может вывести мусор, если последняя считанная порция меньше чем блок
 				writer.write(cbuf, 0, numBytes);
 			}
 			System.out.println("\n========================================================");
@@ -114,22 +116,22 @@ public class FileIODemo {
 		// 3.1
 		// BufferedInputStream(FileInputStream) / BufferedOutputStream(FileOutputStream)
 		// Читаем по 1 байту
-		try (InputStream bis = new BufferedInputStream(new FileInputStream("1.txt"));
-				OutputStream bos = new BufferedOutputStream(new FileOutputStream("3_1.txt")))
-		{
-			int oneByte;
-			while ((oneByte = bis.read()) != -1) {
-				System.out.println(oneByte);
-				bos.write(oneByte);
-			}
-			bos.flush();
-			System.out.println("\n========================================================");
-			
-		} catch (FileNotFoundException exFNF) {
-			System.out.println("File not found!");
-		} catch (IOException exIO) {
-			System.out.println("IO Exception");
-		}
+        try (InputStream bis = new BufferedInputStream(new FileInputStream("1.txt"));
+             OutputStream bos = new BufferedOutputStream(new FileOutputStream("3_1.txt"))) {
+
+            int oneByte;
+            while ((oneByte = bis.read()) != -1) {
+                System.out.println(oneByte);
+                bos.write(oneByte);
+            }
+            bos.flush();
+            System.out.println("\n========================================================");
+
+        } catch (FileNotFoundException exFNF) {
+            System.out.println("File not found!");
+        } catch (IOException exIO) {
+            System.out.println("IO Exception");
+        }
 
 		// 3.2
 		// BufferedReader(FileReader) / BufferedWriter(FileWriter)

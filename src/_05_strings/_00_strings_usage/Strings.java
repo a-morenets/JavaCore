@@ -34,10 +34,6 @@ public class Strings {
 
 		// "someString".some_StringMethod()
 		System.out.println("".isEmpty());
-
-		// comparing Strings
-		System.out.println("Are strings equal? " + "".equals(new String())); // true
-		System.out.println("hello".trim() == "hello".trim()); // true, but == highly NOT recommended!
 	}
 
 }
