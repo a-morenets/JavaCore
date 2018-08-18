@@ -7,7 +7,7 @@ package _04_arrays._02_array_is_object;
 public class ArrayIsObject {
 
     public static void main(String[] args) {
-        int[] a = {0,1,2,3,4,5,6,7,8,9};
+        int[] a = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
         Object o = a;
         if (o instanceof int[]) {
             for (int i = 0; i < ((int[]) o).length; i++) {

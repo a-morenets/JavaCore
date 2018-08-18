@@ -13,7 +13,7 @@ public class Array2D {
         float[] b[] = new float[5][]; // array of five null's
         b[3] = new float[3];
 
-        float c[][] = {{1},{2,3,4},{5,6,7,8,9}}; // different sizes
+        float c[][] = {{1}, {2, 3, 4}, {5, 6, 7, 8, 9}}; // different sizes
 
         // iterate all elements of array b
         for (float[] f : b) {

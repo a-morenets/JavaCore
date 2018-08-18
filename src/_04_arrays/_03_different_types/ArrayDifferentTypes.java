@@ -2,7 +2,7 @@ package _04_arrays._03_different_types;
 
 /**
  * Array of different types
- *
+ * <p>
  * Created by Oleksii on 20.07.2017.
  */
 public class ArrayDifferentTypes {
@@ -10,7 +10,7 @@ public class ArrayDifferentTypes {
     public static void main(String[] args) {
         Object[] o = new Object[3];
 
-        int[] arrInt = {1,2,3};
+        int[] arrInt = {1, 2, 3};
 
         double[] arrDouble = new double[10];
         arrDouble[4] = arrDouble[7] = 55.55;

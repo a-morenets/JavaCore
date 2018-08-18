@@ -44,7 +44,7 @@ public class GeneralInterrupt implements Runnable {
     // interrupted()
     private void work() throws InterruptedException {
         while (true) {
-            for (int i = 0; i < 100000; i++) {
+            for (int i = 0; i < 100_000; i++) {
                 int j = i * 2;
             }
             System.out.println("A isInterrupted()=" + Thread.currentThread().isInterrupted());

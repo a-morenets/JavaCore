@@ -9,9 +9,9 @@ public class Array1D {
 
     public static void main(String[] args) {
         int[] a;
-        int []b = new int[10]; // initialized with default values (zeroes for int type)
+        int[] b = new int[10]; // initialized with default values (zeroes for int type)
         b[3] = b[5] = 7;
-        int c[] = {0,1,2,3,4,5,6,7,8,9};
+        int c[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9};
 //        byte[] bigArray = new byte[Integer.MAX_VALUE]; // OutOfMemoryError
 //        byte[] bigArray = new byte[Integer.MAX_VALUE + 1]; // NegativeArraySizeException
 
