@@ -7,11 +7,16 @@
     <file url="file://$PROJECT_DIR$/User.ser" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_03_operations/_00_priority/OperationsPriority.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_04_arrays/_04_skills/Skills.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_05_strings/_01_regular_expressions/UserNameCheck.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_09_autoboxing/Autoboxing.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_13_interfaces/_03_cloneable/Employee.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_13_interfaces/_04_lambda/LambdaTest.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_13_interfaces/_07_scope/ScopeTest.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_13_interfaces/_08_effectively_final/EffectivelyFinalVariablesDemo.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_00_inner/InnerClassTest.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_01_inner_local/InnerLocalClassTest.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_02_inner_anonymous/InnerAnonymousClassTest.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_04_proxy/ProxyTest.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_creation/StreamCreate.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_18_stream_api/_99_samples/collectors/employees/Main.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="windows-1251" />
