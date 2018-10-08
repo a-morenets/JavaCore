@@ -31,11 +31,12 @@ public class ThreadRunner implements Runnable {
 			try {
 				Thread.sleep(100);
 			} catch (InterruptedException ex) {
-				return;
+                System.out.println(name + ": You won fair and square!");
+				break;
 			}
 
 			if (!currentThread.isInterrupted() && meters >= 1000) {
-				System.out.println(this.name + ": finished!");
+				System.out.println(currentThread.getName() + ": finished!");
 				HTRaceDemo.finished(currentThread);
 				return;
 			}

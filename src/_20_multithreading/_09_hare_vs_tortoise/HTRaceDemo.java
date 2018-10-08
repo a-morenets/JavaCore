@@ -9,11 +9,13 @@ public class HTRaceDemo {
 		tortoise.start();
 	}
 
-	public static void finished(Thread winner) {
-		if (winner.getName().equals("Hare"))
+	public static synchronized void finished(Thread winner) {
+		if (winner.equals(hare))
 			tortoise.interrupt();
-		else if (winner.getName().equals("Tortoise"))
-			hare.interrupt();
+		else if (winner.equals(tortoise))
+            hare.interrupt();
+
+        System.out.println(winner.getName() + " wins!");
 	}
 
 }

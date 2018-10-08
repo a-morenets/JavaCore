@@ -200,8 +200,8 @@ public class FileIODemo {
 			oos.flush();
 			System.out.println("Объекты сохранены");
 
-		} catch (FileNotFoundException fNFex) {
-			System.out.println(fNFex);
+		} catch (FileNotFoundException e) {
+			System.out.println(e);
 		}
 
         System.out.println("Читаем объекты...");
