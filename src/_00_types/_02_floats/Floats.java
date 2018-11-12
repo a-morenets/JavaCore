@@ -69,6 +69,20 @@ public class Floats {
         System.out.println();
         System.out.println("2.0 - 1.1 = " + (2.0 - 1.1));
         System.out.println("2.0 - 1.1 == 0.9 ? " + (2.0 - 1.1 == 0.9)); // false
+
+        // Precisions
+
+        float valF = 0f;
+        for (int i = 0; i < 100000; i++) {
+            valF = valF + 0.1f;
+            System.out.println(valF);
+        }
+
+        double valD = 0f;
+        for (int i = 0; i < 100000; i++) {
+            valD = valD + 0.1d;
+            System.out.println(valD);
+        }
     }
 
 }

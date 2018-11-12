@@ -12,7 +12,7 @@ public class GenMethodDemo {
 
 	public static void main(String[] args) {
 		Integer[] nums = { 1, 2, 3, 4, 5 };
-		if (GenMethodDemo.<Integer, Integer>isIn(2, nums))
+		if (GenMethodDemo.isIn(2, nums))
 			System.out.println("2 is in array");
 		if (!isIn(7, nums))
 			System.out.println("7 is NOT in array");
