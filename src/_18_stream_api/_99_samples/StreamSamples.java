@@ -105,5 +105,4 @@ public class StreamSamples {
                 .reduce((left, right) -> left * right)
                 .getAsLong();
     }
-
 }

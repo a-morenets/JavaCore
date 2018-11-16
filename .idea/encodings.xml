@@ -17,8 +17,8 @@
     <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_01_inner_local/InnerLocalClassTest.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_02_inner_anonymous/InnerAnonymousClassTest.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_04_proxy/ProxyTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_creation/StreamCreate.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_99_samples/collectors/employees/Main.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/StreamCreate.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/collectors/employees/Main.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_19_io/_02_file_in_out/FileIODemo.java" charset="windows-1251" />
     <file url="file://$PROJECT_DIR$/src/_20_multithreading/_01_sleep/SleepDemo.java" charset="windows-1251" />

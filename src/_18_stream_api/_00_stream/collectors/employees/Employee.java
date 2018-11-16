@@ -1,4 +1,4 @@
-package _18_stream_api._99_samples.collectors.employees;
+package _18_stream_api._00_stream.collectors.employees;
 
 public class Employee {
     private String name;

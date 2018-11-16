@@ -1,4 +1,4 @@
-package _18_stream_api._99_samples.matchers;
+package _18_stream_api._00_stream.matchers;
 
 import java.util.stream.IntStream;
 
@@ -9,7 +9,7 @@ public class AllMatch {
 				IntStream.range(0, 10)
 				.peek(System.out::println)
 				.allMatch(i -> i < 10)
-		);
+		); // true
 	}
 
 }

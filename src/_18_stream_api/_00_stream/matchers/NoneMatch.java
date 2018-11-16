@@ -1,17 +1,17 @@
-package _18_stream_api._99_samples.matchers;
+package _18_stream_api._00_stream.matchers;
 
 import java.util.stream.IntStream;
 
 public class NoneMatch {
 
-	boolean isPrime(int n) {
-		return n > 1 && IntStream.range(2, n).noneMatch(i -> n % i == 0);
-	}
-
 	void printPrimesInRange(int from, int to) {
 		IntStream.range(from, to)
 				.filter(this::isPrime)
 				.forEach(System.out::println);
+	}
+
+	boolean isPrime(int n) {
+		return n > 1 && IntStream.range(2, n).noneMatch(i -> n % i == 0);
 	}
 
 	public static void main(String[] args) {
