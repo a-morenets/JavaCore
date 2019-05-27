@@ -62,7 +62,8 @@ public class Java8Tester {
 
 		// Count empty strings
 		count = strings.stream()
-				.filter(String::isEmpty).count();
+				.filter(String::isEmpty)
+				.count();
 		System.out.println("Empty Strings: " + count);
 
 		count = strings.stream()
@@ -91,7 +92,7 @@ public class Java8Tester {
 		System.out.println("List: " + integers);
 
 		IntSummaryStatistics stats = integers.stream()
-                .mapToInt((x) -> x)
+                .mapToInt(x -> x)
                 .summaryStatistics();
 
 		System.out.println("Highest number in List : " + stats.getMax());
@@ -120,7 +121,8 @@ public class Java8Tester {
 
 		// flatMap()
 		String[] newStrings = strings.stream()
-                .flatMap(p -> Arrays.stream(p.split(","))).toArray(String[]::new);
+                .flatMap(p -> Arrays.stream(p.split(",")))
+                .toArray(String[]::new);
 		System.out.println(Arrays.toString(newStrings));
 		
 		// Sum of all numbers

@@ -4,6 +4,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Locale;
 
 public class _01_DateTimeFormatter {
@@ -88,5 +89,26 @@ public class _01_DateTimeFormatter {
 
         isoLocalDate = localDateTimeNow.format(DateTimeFormatter.ISO_LOCAL_DATE);
         System.out.println("isoLocalDate = " + isoLocalDate); // 2018-10-08
+
+
+        System.out.println(parse("29.10.83"));
+        System.out.println(parse("29.10.1983"));
+        System.out.println(parse("29/10/83"));
+    }
+
+    static DateTimeFormatter[] formats = new DateTimeFormatter[] {
+            DateTimeFormatter.ofPattern("dd.MM.yy"),
+            DateTimeFormatter.ofPattern("dd.MM.yyyy"),
+            DateTimeFormatter.ofPattern("dd/MM/yy")
+    };
+
+    static LocalDate parse(String date) {
+        for (DateTimeFormatter format : formats) {
+            try {
+                return LocalDate.parse(date, format);
+            } catch (DateTimeParseException ignored) {
+            }
+        }
+        return null;
     }
 }

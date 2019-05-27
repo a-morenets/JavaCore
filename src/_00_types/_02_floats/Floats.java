@@ -32,8 +32,8 @@ public class Floats {
 
         f = 1 / 0f;
         System.out.println("f = " + f); // +Infinity
-        System.out.println("f == Floats.POSITIVE_INFINITY ? " + (f == java.lang.Float.POSITIVE_INFINITY));
-        System.out.println("Floats.isInfinite(f) ? " + java.lang.Float.isInfinite(f));
+        System.out.println("f == Float.POSITIVE_INFINITY ? " + (f == java.lang.Float.POSITIVE_INFINITY));
+        System.out.println("Float.isInfinite(f) ? " + java.lang.Float.isInfinite(f));
         d = 1 / 0d;
         System.out.println("d = " + d); // +Infinity
         System.out.println("f == d ? " + (f == d)); // true
@@ -41,8 +41,8 @@ public class Floats {
 
         f = 1 / -0f;
         System.out.println("f = " + f); // -Infinity
-        System.out.println("f == Floats.NEGATIVE_INFINITY ? " + (f == java.lang.Float.NEGATIVE_INFINITY));
-        System.out.println("Floats.isInfinite(f) ? " + java.lang.Float.isInfinite(f));
+        System.out.println("f == Float.NEGATIVE_INFINITY ? " + (f == java.lang.Float.NEGATIVE_INFINITY));
+        System.out.println("Float.isInfinite(f) ? " + java.lang.Float.isInfinite(f));
         d = 1 / -0d;
         System.out.println("d = " + d); // -Infinity
         System.out.println("f == d ? " + (f == d)); // true
@@ -69,6 +69,10 @@ public class Floats {
         System.out.println();
         System.out.println("2.0 - 1.1 = " + (2.0 - 1.1));
         System.out.println("2.0 - 1.1 == 0.9 ? " + (2.0 - 1.1 == 0.9)); // false
+
+        System.out.println();
+        System.out.println("2.0f - 1.1f = " + (2.0f - 1.1f));
+        System.out.println("2.0f - 1.1f == 0.9f ? " + (2.0f - 1.1f == 0.9f)); // false
 
         // Precisions
 

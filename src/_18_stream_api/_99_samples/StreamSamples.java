@@ -15,9 +15,9 @@ public class StreamSamples {
     public static void main(String[] args) {
         int[] arrInt = {1, 2, 3};
 //		Stream<Integer> integerStream = Stream.of(arrInt); // error
-        Stream<int[]> streamInt = Stream.of(arrInt); // stream of one int[] object!!!
+        Stream<int[]> streamInt = Stream.of(arrInt); // stream of ONE int[] object!!!
         streamInt
-                .forEach(s -> System.out.println(s + ": " + s.getClass())); // [1, 2, 3]: class [I
+                .forEach(s -> System.out.println(Arrays.toString(s) + ": " + s.getClass())); // [1, 2, 3]: class [I
 
         Integer[] arrInteger = {5, 3, null, 4, 9, 7};
         Stream<Integer> streamInteger = Stream.of(arrInteger);
@@ -25,18 +25,19 @@ public class StreamSamples {
                 .filter(Objects::nonNull)
                 .forEach(s -> System.out.println(s + ": " + s.getClass())); // {value}: class java.lang.Integer
 
-        Stream.of(arrInteger)
+        Stream.of(arrInteger) // Stream<Integer>
 //                .filter(x -> x.equals(Integer.valueOf(5))) // NPE if x == null
                 .filter(x -> Integer.valueOf(5).equals(x))
                 .forEach(System.out::println);
         // or
-        Stream.of(arrInteger)
+        Stream.of(arrInteger) // Stream<Integer>
                 .filter(Integer.valueOf(5)::equals) // calls: Integer.valueOf(5).equals(x) - no NPE
                 .forEach(System.out::println);
 
         Integer max = Stream.of(arrInteger)
                 .filter(Objects::nonNull)
-//                .reduce((a, b) -> Integer.max(a, b)) // or
+//                .reduce((a, b) -> Integer.max(a, b))
+        // or
                 .reduce(Integer::max)
                 .get();
         System.out.println("max = " + max);
@@ -57,7 +58,7 @@ public class StreamSamples {
                 .get();
         System.out.println("maxString = " + maxString);
 
-        // characters frequency:
+        // characters frequencies:
         String str = "abcbbccbab";
         Map<Character, Long> charsFreqLongMap = str.chars()
                 .mapToObj(c -> (char) c)
