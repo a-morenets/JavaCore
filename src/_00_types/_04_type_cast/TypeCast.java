@@ -10,7 +10,7 @@ public class TypeCast {
 		// Q: Is there difference?
 //		int v1 = 1; long v2 = 2; v1 = v1 + v2; // A: Cannot convert from long (v1 + v2) to int (v1)
 		int v1 = 1; long v2 = 2; v1 += v2; // correct
-		System.out.println(v1);
+		System.out.println(v1); // 3L
 
 		// Q: what will be the result?
 		byte b = 1;
@@ -27,7 +27,7 @@ public class TypeCast {
 		double y;
 		byte xx = 0;
 		y = xx + 5;
-        System.out.println(y); // 5.0
+        System.out.println(y); // 5.0d
 
         /* Types promotion
          * 1) bb -> float
