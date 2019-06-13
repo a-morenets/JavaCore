@@ -18,7 +18,7 @@ public class Autoboxing {
 
 		n = 1;
 		Double x = 2.0;
-		System.out.println(true ? n : x); // выводится значение 1.0
+		System.out.println(true ? n : x); // РІС‹РІРѕРґРёС‚СЃСЏ Р·РЅР°С‡РµРЅРёРµ 1.0
 
 		n = null;
 //		System.out.println(2 * n); // NullPointerException
@@ -35,15 +35,15 @@ public class Autoboxing {
 		System.out.println("h = " + h.value);
 	}
 
-	public static void triple(int x) { // не сработает!
-		x++; // попытка модифицировать локальную переменную
+	public static void triple(int x) { // РЅРµ СЃСЂР°Р±РѕС‚Р°РµС‚!
+		x++; // РїРѕРїС‹С‚РєР° РјРѕРґРёС„РёС†РёСЂРѕРІР°С‚СЊ Р»РѕРєР°Р»СЊРЅСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ
 	}
 
-	public static void triple(Integer x) { // не сработает!
-		x++; // попытка модифицировать локальную переменную
+	public static void triple(Integer x) { // РЅРµ СЃСЂР°Р±РѕС‚Р°РµС‚!
+		x++; // РїРѕРїС‹С‚РєР° РјРѕРґРёС„РёС†РёСЂРѕРІР°С‚СЊ Р»РѕРєР°Р»СЊРЅСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ
 	}
 
-	public static void triple(IntHolder x) { // сработает!
+	public static void triple(IntHolder x) { // СЃСЂР°Р±РѕС‚Р°РµС‚!
 		x.value++;
 	}
 	

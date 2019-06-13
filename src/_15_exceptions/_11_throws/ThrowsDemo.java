@@ -1,4 +1,4 @@
-package _15_exceptions._06_throws;
+package _15_exceptions._11_throws;
 
 public class ThrowsDemo {
 

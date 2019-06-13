@@ -2,6 +2,7 @@ package _18_stream_api._00_stream;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Comparator;
 import java.util.Objects;
 
 /**
@@ -32,23 +33,22 @@ public class MaxMinTests {
         Collection<People> peoples = Arrays.asList(
                 new People("Vasja", 16, Sex.MAN),
                 new People("Petja", 23, Sex.MAN),
-                new People("Elena", 42, Sex.WOMEN),
+                new People("Elena", 42, Sex.WOMAN),
                 new People("Ivan", 69, Sex.MAN)
         );
 
         // Find people with minimum age
-        People older = peoples.stream().max((p1, p2) -> p1.getAge().compareTo(p2.getAge())).get();
+        People older = peoples.stream().max(Comparator.comparing(People::getAge)).get();
         System.out.println("older " + older); // print  {name='Ivan', age=69, sex=MAN}
 
         // Find people with maximum age
-        People younger = peoples.stream().min((p1, p2) -> p1.getAge().compareTo(p2.getAge())).get();
+        People younger = peoples.stream().min(Comparator.comparing(People::getAge)).get();
         System.out.println("younger " + younger); // print  {name='Vasja', age=16, sex=MAN}
     }
 
 
     private enum Sex {
-        MAN,
-        WOMEN
+        MAN, WOMAN
     }
 
     private static class People {

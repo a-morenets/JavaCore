@@ -2,7 +2,7 @@ package _20_multithreading._10_suspend_resume;
 
 /**
  * Use described below methodics instead of deprecated suspend() and resume() methods
- * @author Øèëäò
+ * @author Ğ¨Ğ¸Ğ»Ğ´Ñ‚
  *
  */
 public class SuspendResumeDemo {

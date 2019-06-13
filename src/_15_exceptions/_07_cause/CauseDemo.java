@@ -1,4 +1,4 @@
-package _15_exceptions._09_cause;
+package _15_exceptions._07_cause;
 
 /**
  * Created by user on 20.10.2014.
@@ -16,9 +16,9 @@ public class CauseDemo {
 				e.printStackTrace();
 			}
 		} finally {
-			System.out.println("Зачистка мусора");
+			System.out.println("Р—Р°С‡РёСЃС‚РєР° РјСѓСЃРѕСЂР°");
 		}
-		System.out.println("res = " + (num == 0 ? "Деление на 0" : res));
+		System.out.println("res = " + (num == 0 ? "Р”РµР»РµРЅРёРµ РЅР° 0" : res));
 	}
 
 	public static void main(String[] args) {

@@ -1,5 +1,7 @@
 package _03_operations._01_arithmetic;
 
+import java.util.Arrays;
+
 /**
  * Arithmetic operations
  *
@@ -10,6 +12,7 @@ public class ArithmeticOperations {
     public static void main(String[] args) {
         System.out.println(15 / 2); // 7 (int)
         System.out.println(15 % 2); // 1 (int)
+        System.out.println(-15 % -2); // -1 (int) - same sign as -15
         System.out.println(15.0 / 2); // 7.5 (double)
 
         // +=, -=, *=, /=, ...

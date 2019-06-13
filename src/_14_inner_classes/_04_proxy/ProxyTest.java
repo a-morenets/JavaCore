@@ -11,8 +11,8 @@ public class ProxyTest {
 	public static void main(String[] args) {
 		Object[] elements = new Object[1000];
 		
-		// заполнить массив elements прокси-объектами
-		// целых чисел в пределах от 1 до 1000
+		// Р·Р°РїРѕР»РЅРёС‚СЊ РјР°СЃСЃРёРІ elements РїСЂРѕРєСЃРё-РѕР±СЉРµРєС‚Р°РјРё
+		// С†РµР»С‹С… С‡РёСЃРµР» РІ РїСЂРµРґРµР»Р°С… РѕС‚ 1 РґРѕ 1000
 		for (int i = 0; i < elements.length; i++) {
 			Integer value = i + 1;
 			InvocationHandler handler = new TraceHandler(value);
@@ -20,13 +20,13 @@ public class ProxyTest {
 			elements[i] = proxy;
 		}
 		
-		// сформировать случайное целое число
+		// СЃС„РѕСЂРјРёСЂРѕРІР°С‚СЊ СЃР»СѓС‡Р°Р№РЅРѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ
 		Integer key = new Random().nextInt(elements.length) + 1;
 		
-		// выполнить поиск по критерию key
+		// РІС‹РїРѕР»РЅРёС‚СЊ РїРѕРёСЃРє РїРѕ РєСЂРёС‚РµСЂРёСЋ key
 		int result = Arrays.binarySearch(elements, key);
 		
-		// вывести совпавший элемент, если таковой найден
+		// РІС‹РІРµСЃС‚Рё СЃРѕРІРїР°РІС€РёР№ СЌР»РµРјРµРЅС‚, РµСЃР»Рё С‚Р°РєРѕРІРѕР№ РЅР°Р№РґРµРЅ
 		if (result >= 0)
 			System.out.println(elements[result]);
 	}
@@ -37,7 +37,7 @@ class TraceHandler implements InvocationHandler {
 	private Object target;
 
 	/**
-	 * Конструирует объекты типа TraceHandler Oparam t Неявный параметр вызова метода
+	 * РљРѕРЅСЃС‚СЂСѓРёСЂСѓРµС‚ РѕР±СЉРµРєС‚С‹ С‚РёРїР° TraceHandler Oparam t РќРµСЏРІРЅС‹Р№ РїР°СЂР°РјРµС‚СЂ РІС‹Р·РѕРІР° РјРµС‚РѕРґР°
 	 */
 	public TraceHandler(Object t) {
 		target = t;
@@ -45,13 +45,13 @@ class TraceHandler implements InvocationHandler {
 
 	public Object invoke(Object proxy, Method m, Object[] args) throws Throwable {
 		
-		// вывести неявный параметр
+		// РІС‹РІРµСЃС‚Рё РЅРµСЏРІРЅС‹Р№ РїР°СЂР°РјРµС‚СЂ
 		System.out.print(target);
 		
-		// вывести имя метода
+		// РІС‹РІРµСЃС‚Рё РёРјСЏ РјРµС‚РѕРґР°
 		System.out.print(" . " + m.getName() + " (");
 
-		// вывести явные параметры
+		// РІС‹РІРµСЃС‚Рё СЏРІРЅС‹Рµ РїР°СЂР°РјРµС‚СЂС‹
 		if (args != null) {
 			for (int i = 0; i < args.length; i++) {
 				System.out.print(args[i]);
@@ -62,7 +62,7 @@ class TraceHandler implements InvocationHandler {
 		
 		System.out.println(")");
 	
-		// вызвать конкретный метод
+		// РІС‹Р·РІР°С‚СЊ РєРѕРЅРєСЂРµС‚РЅС‹Р№ РјРµС‚РѕРґ
 		return m.invoke(target, args);
 	}
 	

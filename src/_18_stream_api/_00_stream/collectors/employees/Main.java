@@ -9,18 +9,18 @@ public class Main {
 
     public static void main(String[] args) {
         List<Employee> employees = Arrays.asList(
-                new Employee("Александр", 18),
-                new Employee("Максим", 33),
-                new Employee("Алексей", 25),
-                new Employee("Иван", 33)
+                new Employee("РђР»РµРєСЃР°РЅРґСЂ", 18),
+                new Employee("РњР°РєСЃРёРј", 33),
+                new Employee("РђР»РµРєСЃРµР№", 25),
+                new Employee("РРІР°РЅ", 33)
         );
 
         employees.stream()
                 .collect(Collectors.groupingBy(Employee::getAge)) // Map<Integer, List<Employee>>
-                .forEach((age, employeeList) -> System.out.printf("Возраст %s: %s\n", age, employeeList));
-//        Возраст 33: [Максим, Иван]
-//        Возраст 18: [Александр]
-//        Возраст 25: [Алексей]
+                .forEach((age, employeeList) -> System.out.printf("Р’РѕР·СЂР°СЃС‚ %s: %s\n", age, employeeList));
+//        Р’РѕР·СЂР°СЃС‚ 33: [РњР°РєСЃРёРј, РРІР°РЅ]
+//        Р’РѕР·СЂР°СЃС‚ 18: [РђР»РµРєСЃР°РЅРґСЂ]
+//        Р’РѕР·СЂР°СЃС‚ 25: [РђР»РµРєСЃРµР№]
 
         Double avgAge = employees.stream()
                 .collect(Collectors.averagingInt(Employee::getAge));

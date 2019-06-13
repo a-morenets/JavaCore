@@ -1,28 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
-    <file url="file://$PROJECT_DIR$/1_1.txt" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/1_2.txt" charset="windows-1251" />
+  <component name="Encoding" native2AsciiForPropertiesFiles="true" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/1_1.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/1_2.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/2_1.txt" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/User.ser" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/_03_operations/_00_priority/OperationsPriority.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_04_arrays/_04_skills/Skills.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_05_strings/_01_regular_expressions/UserNameCheck.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_09_autoboxing/Autoboxing.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_03_cloneable/Employee.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_04_lambda/LambdaTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_07_scope/ScopeTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_08_effectively_final/EffectivelyFinalVariablesDemo.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_00_inner/InnerClassTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_01_inner_local/InnerLocalClassTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_02_inner_anonymous/InnerAnonymousClassTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_04_proxy/ProxyTest.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/StreamCreate.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/collectors/employees/Main.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_19_io/_02_file_in_out/FileIODemo.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_01_sleep/SleepDemo.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_10_suspend_resume/SuspendResumeDemo.java" charset="windows-1251" />
-    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_11_interrupt/CatLife.java" charset="windows-1251" />
+    <file url="file://$PROJECT_DIR$/src/_03_operations/_00_priority/OperationsPriority.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_04_arrays/_04_skills/Skills.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_05_strings/_01_regular_expressions/UserNameCheck.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_09_autoboxing/Autoboxing.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_03_cloneable/Employee.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_04_lambda/LambdaTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_07_scope/ScopeTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_13_interfaces/_08_effectively_final/EffectivelyFinalVariablesDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_00_inner/InnerClassTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_01_inner_local/InnerLocalClassTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_02_inner_anonymous/InnerAnonymousClassTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_04_proxy/ProxyTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_15_exceptions/_00_stack_trace/StackTraceTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_15_exceptions/_07_cause/CauseDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/collectors/employees/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_19_io/_02_file_in_out/FileIODemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_01_sleep/SleepDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_10_suspend_resume/SuspendResumeDemo.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_20_multithreading/_11_interrupt/CatLife.java" charset="UTF-8" />
+    <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

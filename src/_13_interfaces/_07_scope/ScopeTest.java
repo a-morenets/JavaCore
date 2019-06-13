@@ -31,7 +31,7 @@ public class ScopeTest {
 		System.exit(0);
 		
 		Path first = Paths.get("/usr/bin");
-//		Comparator<String> comp = (first, second) -> first.length() - second.length(); // ΞΨΘΑΚΐ: οεπεμεννΰÿ first σζε ξοπεδελενΰ!
+//		Comparator<String> comp = (first, second) -> first.length() - second.length(); // ΠΠ¨ΠΠ‘ΠΠ: ΠΏΠµΡ€ΠµΠΌΠµΠ½Π½Π°Ρ first ΡƒΠ¶Πµ ΠΎΠΏΡ€ΠµΠ΄ΠµΠ»ΠµΠ½Π°!
 	}
 
 }

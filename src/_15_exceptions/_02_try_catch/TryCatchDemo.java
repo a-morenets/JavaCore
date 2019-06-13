@@ -13,5 +13,7 @@ public class TryCatchDemo {
 		}
 		System.out.println("After catch");
 	}
-	
+
+	// >> / by zero
+    // After catch
 }

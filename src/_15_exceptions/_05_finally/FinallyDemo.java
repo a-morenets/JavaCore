@@ -1,4 +1,4 @@
-package _15_exceptions._07_finally;
+package _15_exceptions._05_finally;
 
 public class FinallyDemo {
 

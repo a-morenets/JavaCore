@@ -15,9 +15,8 @@ import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 /**
- *
  * Create Stream Api examples
- *
+ * <p>
  * Created by vedenin on 17 .10.15.
  */
 public class BuildTests {
@@ -31,7 +30,7 @@ public class BuildTests {
         System.out.println("streamFromValues = " + streamFromValues.collect(Collectors.toList())); // print  streamFromValues = [a1, a2, a3]
 
         // Create Stream from array
-        String[] array = {"a1","a2","a3"};
+        String[] array = {"a1", "a2", "a3"};
         Stream<String> streamFromArrays = Arrays.stream(array);
         System.out.println("streamFromArrays = " + streamFromArrays.collect(Collectors.toList())); // print  streamFromArrays = [a1, a2, a3]
 
@@ -58,7 +57,7 @@ public class BuildTests {
         // Create Stream from string
         IntStream streamFromString = "123".chars();
         System.out.print("streamFromString = ");
-        streamFromString.forEach((e)->System.out.print(e + " , ")); // print  streamFromString = 49 , 50 , 51 ,
+        streamFromString.forEach((e) -> System.out.print(e + " , ")); // print  streamFromString = 49 , 50 , 51 ,
         System.out.println();
 
         // Using Stream.builder
@@ -88,7 +87,7 @@ public class BuildTests {
         System.out.println("streamFromPath = " + streamFromPath.collect(Collectors.toList())); // print list of files
 
         // Create stream from finding files
-        Stream<Path> streamFromFind = Files.find(Paths.get(""), 10, (p,a) -> true);
+        Stream<Path> streamFromFind = Files.find(Paths.get(""), 10, (p, a) -> true);
         System.out.println("streamFromFind = " + streamFromFind.collect(Collectors.toList())); // print list of files
 
         // Create stream from files tree
@@ -96,8 +95,7 @@ public class BuildTests {
         System.out.println("streamFromFileTree = " + streamFromFileTree.collect(Collectors.toList())); // print list of files
 
         // Create stream from Pattern
-        Stream<String> streamFromPattern = Pattern.compile(":")
-                .splitAsStream("a1:a2:a3");
+        Stream<String> streamFromPattern = Pattern.compile(":").splitAsStream("a1:a2:a3");
         System.out.println("streamFromPattern = " + streamFromPattern.collect(Collectors.joining(","))); // print a1,a2,a3
 
         // Create stream from BufferedReader
@@ -109,9 +107,8 @@ public class BuildTests {
         }
     }
 
-    public static void main(String[] args)  throws Exception {
+    public static void main(String[] args) throws Exception {
         testBuildStream();
     }
-
 
 }

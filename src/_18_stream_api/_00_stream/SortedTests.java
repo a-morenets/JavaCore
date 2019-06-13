@@ -49,12 +49,12 @@ public class SortedTests {
 
         // sort by alphabet by name in reverse order
         Collection<People> byName = peoples.stream().sorted((o1,o2) -> -o1.getName().compareTo(o2.getName())).collect(Collectors.toList());
-        System.out.println("byName = " + byName); // byName = [{name='Petja', age=23, sex=MAN}, {name='Ivan', age=69, sex=MAN}, {name='Elena', age=42, sex=WOMEN}, {name='Vasja', age=16, sex=MAN}]
+        System.out.println("byName = " + byName); // byName = [{name='Petja', age=23, sex=MAN}, {name='Ivan', age=69, sex=MAN}, {name='Elena', age=42, sex=WOMAN}, {name='Vasja', age=16, sex=MAN}]
 
         // sort by sex and (later) by age
         Collection<People> bySexAndAge = peoples.stream().sorted((o1, o2) -> o1.getSex() != o2.getSex() ? o1.getSex().
                 compareTo(o2.getSex()) : o1.getAge().compareTo(o2.getAge())).collect(Collectors.toList());
-        System.out.println("bySexAndAge = " + bySexAndAge); // bySexAndAge = [{name='Vasja', age=16, sex=MAN}, {name='Petja', age=23, sex=MAN}, {name='Ivan', age=69, sex=MAN}, {name='Elena', age=42, sex=WOMEN}]
+        System.out.println("bySexAndAge = " + bySexAndAge); // bySexAndAge = [{name='Vasja', age=16, sex=MAN}, {name='Petja', age=23, sex=MAN}, {name='Ivan', age=69, sex=MAN}, {name='Elena', age=42, sex=WOMAN}]
     }
 
     private enum Sex {

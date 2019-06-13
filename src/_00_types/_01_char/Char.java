@@ -60,6 +60,12 @@ public class Char {
         // removing the space character leads to syntax error, even in comment -> "c:\ users"
 
         // see also http://ru.wikipedia.org/wiki/UTF-16)
+
+        byte b = (byte) 0b10000001;
+        System.out.println("b = " + b);
+        b <<= 1;
+        System.out.println("b = " + b);
+        System.out.println("b = " + (b << 1));
     }
 
 }

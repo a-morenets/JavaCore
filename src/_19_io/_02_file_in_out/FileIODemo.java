@@ -14,15 +14,15 @@ public class FileIODemo {
 		
 		// 1.1
 		// Byte streams (FileInputStream / FileOutputStream)
-		// Читаем по 1 байту
+		// Р§РёС‚Р°РµРј РїРѕ 1 Р±Р°Р№С‚Сѓ
 		try (InputStream fis = new FileInputStream("1.txt");
 				OutputStream fos = new FileOutputStream("1_1.txt")) {
 			
 			int oneByte;
 			while ((oneByte = fis.read()) != -1) {
-				// т.к. oneByte содержит 1 байт, то правильно печатаются только первые 128 символов ASCII-таблицы:
-				System.out.print((char) oneByte); // кириллица выводится В КОНСОЛЬ как ??????????
-				fos.write(oneByte); // но в файл пишутся КОРРЕКТНЫЕ байты
+				// С‚.Рє. oneByte СЃРѕРґРµСЂР¶РёС‚ 1 Р±Р°Р№С‚, С‚Рѕ РїСЂР°РІРёР»СЊРЅРѕ РїРµС‡Р°С‚Р°СЋС‚СЃСЏ С‚РѕР»СЊРєРѕ РїРµСЂРІС‹Рµ 128 СЃРёРјРІРѕР»РѕРІ ASCII-С‚Р°Р±Р»РёС†С‹:
+				System.out.print((char) oneByte); // РєРёСЂРёР»Р»РёС†Р° РІС‹РІРѕРґРёС‚СЃСЏ Р’ РљРћРќРЎРћР›Р¬ РєР°Рє ??????????
+				fos.write(oneByte); // РЅРѕ РІ С„Р°Р№Р» РїРёС€СѓС‚СЃСЏ РљРћР Р Р•РљРўРќР«Р• Р±Р°Р№С‚С‹
 			}
 			System.out.println("\n========================================================");
 			fos.flush();
@@ -35,7 +35,7 @@ public class FileIODemo {
 
 		// 1.2
 		// Byte streams (FileInputStream / FileOutputStream)
-		// Читаем байты с помощью буффера размером bufSize:
+		// Р§РёС‚Р°РµРј Р±Р°Р№С‚С‹ СЃ РїРѕРјРѕС‰СЊСЋ Р±СѓС„С„РµСЂР° СЂР°Р·РјРµСЂРѕРј bufSize:
 		try (InputStream is = new FileInputStream("1.txt");
 				OutputStream os = new FileOutputStream(new File("1_2.txt"))) {
 
@@ -73,12 +73,12 @@ public class FileIODemo {
 		
 		// 2.1
 		// Character streams (FileReader / FileWriter)
-		// Читаем по 1 символу
+		// Р§РёС‚Р°РµРј РїРѕ 1 СЃРёРјРІРѕР»Сѓ
 		try (Reader reader = new FileReader("1.txt");
 				Writer writer = new FileWriter(new File("2_1.txt"))) {
 			
 			int ch;
-			while ((ch = reader.read()) != -1) { // ch - символ 0x0000-0xffff
+			while ((ch = reader.read()) != -1) { // ch - СЃРёРјРІРѕР» 0x0000-0xffff
 				System.out.println(ch);
 				writer.write(ch);
 			}
@@ -93,7 +93,7 @@ public class FileIODemo {
 
 		// 2.2
 		// Character streams (FileReader / FileWriter)
-		// Читаем символы с помощью буффера размером bufSize:
+		// Р§РёС‚Р°РµРј СЃРёРјРІРѕР»С‹ СЃ РїРѕРјРѕС‰СЊСЋ Р±СѓС„С„РµСЂР° СЂР°Р·РјРµСЂРѕРј bufSize:
 		try (Reader reader = new FileReader("1.txt");
 				Writer writer = new FileWriter(new File("2_2.txt"))) {
 			
@@ -101,7 +101,7 @@ public class FileIODemo {
 			char[] cbuf = new char[bufSize];
 			int numBytes;
 			while ((numBytes = reader.read(cbuf)) != -1) { // numBytes = number of bytes read
-				System.out.println(cbuf); // Может вывести мусор, если последняя считанная порция меньше чем блок
+				System.out.println(cbuf); // РњРѕР¶РµС‚ РІС‹РІРµСЃС‚Рё РјСѓСЃРѕСЂ, РµСЃР»Рё РїРѕСЃР»РµРґРЅСЏСЏ СЃС‡РёС‚Р°РЅРЅР°СЏ РїРѕСЂС†РёСЏ РјРµРЅСЊС€Рµ С‡РµРј Р±Р»РѕРє
 				writer.write(cbuf, 0, numBytes);
 			}
 			System.out.println("\n========================================================");
@@ -115,7 +115,7 @@ public class FileIODemo {
 
 		// 3.1
 		// BufferedInputStream(FileInputStream) / BufferedOutputStream(FileOutputStream)
-		// Читаем по 1 байту
+		// Р§РёС‚Р°РµРј РїРѕ 1 Р±Р°Р№С‚Сѓ
         try (InputStream bis = new BufferedInputStream(new FileInputStream("1.txt"));
              OutputStream bos = new BufferedOutputStream(new FileOutputStream("3_1.txt"))) {
 
@@ -135,7 +135,7 @@ public class FileIODemo {
 
 		// 3.2
 		// BufferedReader(FileReader) / BufferedWriter(FileWriter)
-		// Читаем строки построчно с помощью readLine():
+		// Р§РёС‚Р°РµРј СЃС‚СЂРѕРєРё РїРѕСЃС‚СЂРѕС‡РЅРѕ СЃ РїРѕРјРѕС‰СЊСЋ readLine():
 		try (BufferedReader reader = new BufferedReader(new FileReader("1.txt"));
 				BufferedWriter writer = new BufferedWriter(new FileWriter("3_2.txt")))
 //				PrintWriter writer = new PrintWriter(new FileWriter("3_1.txt"));
@@ -161,12 +161,12 @@ public class FileIODemo {
         LinkedList<User> userLinkedList = new LinkedList<>();
 
 		try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("User.ser"))) {
-			userArrayList.add(new User("Петя", 25));
-			userArrayList.add(new User("Коля", 34));
-			userArrayList.add(new User("Николай", 53));
+			userArrayList.add(new User("РџРµС‚СЏ", 25));
+			userArrayList.add(new User("РљРѕР»СЏ", 34));
+			userArrayList.add(new User("РќРёРєРѕР»Р°Р№", 53));
 
-			userLinkedList.add(new User("Женя", 42));
-			userLinkedList.add(new User("Александр", 21));
+			userLinkedList.add(new User("Р–РµРЅСЏ", 42));
+			userLinkedList.add(new User("РђР»РµРєСЃР°РЅРґСЂ", 21));
 
 			// write objects one after another
 			
@@ -183,12 +183,12 @@ public class FileIODemo {
             }
 
             // Add some data to ArrayList
-            userArrayList.add(new User("+ Маша", 11));
-            userArrayList.add(new User("+ Саша", 24));
+            userArrayList.add(new User("+ РњР°С€Р°", 11));
+            userArrayList.add(new User("+ РЎР°С€Р°", 24));
             System.out.println(userArrayList);
 
             // Add some data to LinkedList
-            userLinkedList.add(new User("+ Александр", 21));
+            userLinkedList.add(new User("+ РђР»РµРєСЃР°РЅРґСЂ", 21));
             System.out.println(userLinkedList);
 
             // now ArrayList contains 3 + 2 = 5 elements
@@ -198,13 +198,13 @@ public class FileIODemo {
             oos.writeUnshared(userLinkedList); // LinkedList - writeUnshared !!!
 
 			oos.flush();
-			System.out.println("Объекты сохранены");
+			System.out.println("РћР±СЉРµРєС‚С‹ СЃРѕС…СЂР°РЅРµРЅС‹");
 
 		} catch (FileNotFoundException e) {
 			System.out.println(e);
 		}
 
-        System.out.println("Читаем объекты...");
+        System.out.println("Р§РёС‚Р°РµРј РѕР±СЉРµРєС‚С‹...");
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream("User.ser"))) {
 
 			// read objects one after another
@@ -233,7 +233,7 @@ public class FileIODemo {
             LinkedList<User> u3in = (LinkedList<User>) ois.readObject(); // LinkedList with added elements
             System.out.println(u3in);
 
-            System.out.println("Объекты восстановлены");
+            System.out.println("РћР±СЉРµРєС‚С‹ РІРѕСЃСЃС‚Р°РЅРѕРІР»РµРЅС‹");
 			
 		} catch (FileNotFoundException fNFex) {
 			System.out.println("FNF Error!");

@@ -21,9 +21,9 @@ public class UserNameCheck {
         System.out.println(dumbCheck("Z@OZA"));
         System.out.println(dumbCheck("vo-van"));
 
-        String userNameString = "akjsdhflkajsdfh ® lkgjhf";
+        String userNameString = "akjsdhflkajsdfh –Å lkgjhf";
         System.out.print("\n\"" + userNameString + "\"" + " contains cyrillic symbol(s)? ");
-        Pattern p = Pattern.compile("[¿-ˇ®∏]");
+        Pattern p = Pattern.compile("[–ê-—è–Å—ë]");
         System.out.println(p.matcher(userNameString).find());
     }
 

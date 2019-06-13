@@ -9,7 +9,7 @@ public class EffectivelyFinalVariablesDemo {
 
 	public static void countDown(int start, int delay) {
 		ActionListener listener = event -> {
-//			 start--; // ОШИБКА: изменить захваченную переменную нельзя!
+//			 start--; // РћРЁРР‘РљРђ: РёР·РјРµРЅРёС‚СЊ Р·Р°С…РІР°С‡РµРЅРЅСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ РЅРµР»СЊР·СЏ!
 			System.out.println(start);
 		};
 		new Timer(delay, listener).start();
@@ -18,7 +18,7 @@ public class EffectivelyFinalVariablesDemo {
 	public static void repeat(String text, int count) {
 		for (int i = 1; i < count; i++) {
 			ActionListener listener = event -> {
-//				System.out.println(i + " " + text); // ОШИБКА: нельзя ссылаться на изменяемую переменную i
+//				System.out.println(i + " " + text); // РћРЁРР‘РљРђ: РЅРµР»СЊР·СЏ СЃСЃС‹Р»Р°С‚СЊСЃСЏ РЅР° РёР·РјРµРЅСЏРµРјСѓСЋ РїРµСЂРµРјРµРЅРЅСѓСЋ i
 			};
 			new Timer(1000, listener).start();
 		}

@@ -13,7 +13,7 @@ public class InnerLocalClassTest {
 	public static void main(String[] args) {
 		TalkingClock clock = new TalkingClock(1000, true);
 		clock.start();
-		// выполнять программу до тех пор, пока пользователь не щелкнет на кнопке ОК
+		// РІС‹РїРѕР»РЅСЏС‚СЊ РїСЂРѕРіСЂР°РјРјСѓ РґРѕ С‚РµС… РїРѕСЂ, РїРѕРєР° РїРѕР»СЊР·РѕРІР°С‚РµР»СЊ РЅРµ С‰РµР»РєРЅРµС‚ РЅР° РєРЅРѕРїРєРµ РћРљ
 		JOptionPane.showMessageDialog(null, "Quit program?");
 		System.exit(0);
 	}

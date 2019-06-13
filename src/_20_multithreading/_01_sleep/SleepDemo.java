@@ -22,11 +22,11 @@ public class SleepDemo implements Runnable {
 		try {
 			for (int i = 0; i < this.seconds; i++) {
 				Thread.sleep(1000);
-				System.out.println("Идет секунда: " + i
-						+ " выполнения потока под номером " + this.number);
+				System.out.println("РРґРµС‚ СЃРµРєСѓРЅРґР°: " + i
+						+ " РІС‹РїРѕР»РЅРµРЅРёСЏ РїРѕС‚РѕРєР° РїРѕРґ РЅРѕРјРµСЂРѕРј " + this.number);
 			}
 		} catch (InterruptedException e) {
-			System.out.println("Проблемы с потоком!");
+			System.out.println("РџСЂРѕР±Р»РµРјС‹ СЃ РїРѕС‚РѕРєРѕРј!");
 		}
 	}
 

@@ -5,8 +5,8 @@ import java.util.Scanner;
 public class StackTraceTest {
 
 	/**
-	 * Вычисляет факториал заданного числа
-	 * @param n	Положительное целое число
+	 * Р’С‹С‡РёСЃР»СЏРµС‚ С„Р°РєС‚РѕСЂРёР°Р» Р·Р°РґР°РЅРЅРѕРіРѕ С‡РёСЃР»Р°
+	 * @param n	РџРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ
 	 * @return n ! = 1 * 2 * . . . * n
 	 */
 	public static int factorial(int n) {

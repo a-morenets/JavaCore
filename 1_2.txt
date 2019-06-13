@@ -1,9 +1,9 @@
-«'øÊ ≥˘Â ˆËı ˇ·ÎÛÍ!
+–ó'—ó–∂ —ñ—â–µ —Ü–∏—Ö —è–±–ª—É–∫!
 
-Oracle Announces Winners of the 2014 Dukeís Choice Awards!
-This yearís Dukeís Choice Award winners help make travel safer, feed hungry refugees, improve crop yields, provide cool technology, and aim to end a decade-long debate in the Java community.
+Oracle Announces Winners of the 2014 Duke‚Äôs Choice Awards!
+This year‚Äôs Duke‚Äôs Choice Award winners help make travel safer, feed hungry refugees, improve crop yields, provide cool technology, and aim to end a decade-long debate in the Java community.
 
-They are an eclectic bunch of developers, innovators, and educators. Some are using the Java platform to address real-world challenges to improve road and air safety, assist refugees, and increase grain crop quality and quantity to help feed the hungry. Others are promoting Java in home automation and game development, solving important technical issues, educating Africaís Java community, and hoping to resolve a longstanding community debate.
+They are an eclectic bunch of developers, innovators, and educators. Some are using the Java platform to address real-world challenges to improve road and air safety, assist refugees, and increase grain crop quality and quantity to help feed the hungry. Others are promoting Java in home automation and game development, solving important technical issues, educating Africa‚Äôs Java community, and hoping to resolve a longstanding community debate.
 
 Apache TomEE
 Apache Software Foundation

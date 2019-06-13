@@ -16,16 +16,16 @@ public class Employee implements Cloneable {
 
 	@Override
 	public Employee clone() throws CloneNotSupportedException {
-		// вызвать метод Object.clone()
+		// РІС‹Р·РІР°С‚СЊ РјРµС‚РѕРґ Object.clone()
 		Employee cloned = (Employee) super.clone();
-		// клонировать изменяемые поля
+		// РєР»РѕРЅРёСЂРѕРІР°С‚СЊ РёР·РјРµРЅСЏРµРјС‹Рµ РїРѕР»СЏ
 		cloned.hireDay = (Date) hireDay.clone();
 		return cloned;
 	}
 
 	public void setHireDay(int year, int month, int day) {
 		Date newHireDay = new GregorianCalendar(year, month - 1, day).getTime();
-		// Пример изменения поля экземпляра
+		// РџСЂРёРјРµСЂ РёР·РјРµРЅРµРЅРёСЏ РїРѕР»СЏ СЌРєР·РµРјРїР»СЏСЂР°
 		hireDay.setTime(newHireDay.getTime());
 	}
 

@@ -15,18 +15,18 @@ public class CatLife {
         @Override
         public void run() {
             while (!Thread.currentThread().isInterrupted()) {
-                System.out.println("Сон начинается");
+                System.out.println("РЎРѕРЅ РЅР°С‡РёРЅР°РµС‚СЃСЏ");
                 sleep2sec();
-                System.out.println("Сон закончился\n");
+                System.out.println("РЎРѕРЅ Р·Р°РєРѕРЅС‡РёР»СЃСЏ\n");
             }
-            System.out.println("Завершение работы потока");
+            System.out.println("Р—Р°РІРµСЂС€РµРЅРёРµ СЂР°Р±РѕС‚С‹ РїРѕС‚РѕРєР°");
         }
 
         private void sleep2sec() {
             try {
                 Thread.sleep(2000);
             } catch (InterruptedException e) {
-                System.out.println("Сон прерван");
+                System.out.println("РЎРѕРЅ РїСЂРµСЂРІР°РЅ");
 //                Thread.currentThread().interrupt(); // uncomment to fix
             }
         }
