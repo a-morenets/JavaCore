@@ -19,7 +19,7 @@
     <file url="file://$PROJECT_DIR$/src/_14_inner_classes/_04_proxy/ProxyTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_15_exceptions/_00_stack_trace/StackTraceTest.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_15_exceptions/_07_cause/CauseDemo.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream/collectors/employees/Main.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/_18_stream_api/_00_stream_api/collectors/employees/Main.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_19_io/_00_stdIn/ScannerExample.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_19_io/_02_file_in_out/FileIODemo.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/_20_multithreading/_01_sleep/SleepDemo.java" charset="UTF-8" />

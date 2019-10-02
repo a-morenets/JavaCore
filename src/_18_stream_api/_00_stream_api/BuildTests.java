@@ -1,4 +1,4 @@
-package _18_stream_api._00_stream;
+package _18_stream_api._00_stream_api;
 
 import java.io.BufferedReader;
 import java.io.File;
