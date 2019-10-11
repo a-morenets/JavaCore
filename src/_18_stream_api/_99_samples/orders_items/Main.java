@@ -2,6 +2,7 @@ package _18_stream_api._99_samples.orders_items;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Main {
 
@@ -103,7 +104,8 @@ public class Main {
         System.out.println("\nВывести с помощью стримов список айтемов без дублей:");
         orderList.stream()
                 .flatMap(order -> order.getItems().stream())
-                .distinct()
+//                .distinct()
+                .collect(Collectors.toSet())
                 .forEach(System.out::println);
 
         // Список ордеров у которых есть айтемы с заданным статусом.
@@ -111,5 +113,14 @@ public class Main {
         orderList.stream()
                 .filter(order -> order.getItems().stream().anyMatch(item -> item.getStatus() == Status.RESERVED))
                 .forEach(System.out::println);
+
+        // Список айтемов и ордеров, в которых они встречаются
+/*
+        orderList.stream()
+                .collect(Collectors.toMap(order -> order, Order::getItems))
+                .entrySet().stream()
+                .collect(Collectors.toMap(Map.Entry::getValue, Map.Entry::getKey))
+                .entrySet().stream()
+*/
     }
 }

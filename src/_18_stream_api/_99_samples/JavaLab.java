@@ -17,17 +17,14 @@ public class JavaLab {
      */
     @Test
     public void task1() {
-        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den");
-        String result = list.stream()
-                .filter(s -> list.indexOf(s) % 2 != 0)
-                .map(s -> list.indexOf(s) + ". " + s)
-                .collect(Collectors.joining(", "));
-        System.out.println(result);
+        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den", "Ali");
 
-        Stream<String> stringStream = Stream.of("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den");
-        LongStream.range(0, stringStream.count())
+        String result = IntStream.range(0, list.size())
                 .filter(n -> n % 2 != 0)
-                .mapToObj(n -> stringStream);
+                .mapToObj(i -> i + ". " + list.get(i))
+                .collect(Collectors.joining(", "));
+
+        System.out.println(result);
     }
 
     /**
@@ -35,11 +32,12 @@ public class JavaLab {
      */
     @Test
     public void task2() {
-        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den");
+        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den", "Ali");
         List<String> result = list.stream()
                 .map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
+
         System.out.println(result);
     }
 
@@ -54,6 +52,7 @@ public class JavaLab {
                 .flatMap(s -> Arrays.stream(s.split(",")))
                 .map(String::trim)
                 .collect(Collectors.joining(", "));
+
         System.out.println(numbers);
     }
 
@@ -96,5 +95,13 @@ public class JavaLab {
         }
 
         return sb.build();
+    }
+
+    @Test
+    public void parseString() {
+        Arrays.stream("ssdfgdf ojihoih uytutyr sd vnmbvmn tr kif uyrtutyr hgjhsgdfkjghsdfjhg j jhgs sd".split("\\s+"))
+                .filter(s -> s.length() < 5)
+                .distinct()
+                .forEach(System.out::println);
     }
 }

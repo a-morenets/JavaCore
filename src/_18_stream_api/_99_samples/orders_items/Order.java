@@ -12,6 +12,10 @@ public class Order {
         this.items = items;
     }
 
+    public String getId() {
+        return id;
+    }
+
     public List<Item> getItems() {
         return items;
     }

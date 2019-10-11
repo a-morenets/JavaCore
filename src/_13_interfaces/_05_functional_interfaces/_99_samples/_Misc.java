@@ -2,6 +2,7 @@ package _13_interfaces._05_functional_interfaces._99_samples;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * https://www.mkyong.com/java8/java-8-flatmap-example/
