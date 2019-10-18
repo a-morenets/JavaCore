@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class JavaLab {
@@ -15,11 +17,13 @@ public class JavaLab {
      */
     @Test
     public void task1() {
-        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den");
-        String result = list.stream()
-                .filter(s -> list.indexOf(s) % 2 != 0)
-                .map(s -> list.indexOf(s) + ". " + s)
+        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den", "Ali");
+
+        String result = IntStream.range(0, list.size())
+                .filter(n -> n % 2 != 0)
+                .mapToObj(i -> i + ". " + list.get(i))
                 .collect(Collectors.joining(", "));
+
         System.out.println(result);
     }
 
@@ -28,11 +32,12 @@ public class JavaLab {
      */
     @Test
     public void task2() {
-        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den");
+        List<String> list = Arrays.asList("Olga", "Ivan", "Oleksii", "Peter", "Anna", "Maria", "Den", "Ali");
         List<String> result = list.stream()
                 .map(String::toUpperCase)
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList());
+
         System.out.println(result);
     }
 
@@ -47,6 +52,7 @@ public class JavaLab {
                 .flatMap(s -> Arrays.stream(s.split(",")))
                 .map(String::trim)
                 .collect(Collectors.joining(", "));
+
         System.out.println(numbers);
     }
 
@@ -59,7 +65,14 @@ public class JavaLab {
      */
     @Test
     public void task4() {
+        LongStream endlessRandomNumbersStream = getEndlessRandomNumbersStream(0, 25214903917L, 11, (long) Math.pow(2, 48));
+        endlessRandomNumbersStream.forEach(System.out::println);
+    }
 
+    private static LongStream getEndlessRandomNumbersStream(long seed, long a, long c, long m) {
+        return Stream.iterate(seed, x -> (a * x + c) % m)
+                .limit(10)
+                .mapToLong(x -> x);
     }
 
     /**
@@ -73,7 +86,22 @@ public class JavaLab {
     }
 
     public static <T> Stream<T> zip(Stream<T> first, Stream<T> second) {
+        List<T> ls1 = first.collect(Collectors.toList());
+        List<T> ls2 = second.collect(Collectors.toList());
+        Stream.Builder<T> sb = Stream.builder();
+        for (int i = 0; i < Math.min(ls1.size(), ls2.size()); i++) {
+            sb.accept(ls1.get(i));
+            sb.accept(ls2.get(i));
+        }
 
-        return null;
+        return sb.build();
+    }
+
+    @Test
+    public void parseString() {
+        Arrays.stream("ssdfgdf ojihoih uytutyr sd vnmbvmn tr kif uyrtutyr hgjhsgdfkjghsdfjhg j jhgs sd".split("\\s+"))
+                .filter(s -> s.length() < 5)
+                .distinct()
+                .forEach(System.out::println);
     }
 }
