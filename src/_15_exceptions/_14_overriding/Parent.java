@@ -1,4 +1,4 @@
-package _15_exceptions._14_overriving;
+package _15_exceptions._14_overriding;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
