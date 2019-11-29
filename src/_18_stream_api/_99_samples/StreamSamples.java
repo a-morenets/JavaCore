@@ -92,6 +92,11 @@ public class StreamSamples {
 //                .boxed().map(Object::toString)
                 .mapToObj(Integer::toString)
                 .collect(Collectors.joining(", "));
+
+        String palindromeStr = "qwewq";
+        System.out.println("Is palindrome: " + palindromeStr + ": " + isPalindrome(palindromeStr));
+        String nonPalindromeStr = "qwerty";
+        System.out.println("Is palindrome: " + nonPalindromeStr + ": " + isPalindrome(nonPalindromeStr));
     }
 
     // Factorial (recursive)
@@ -105,5 +110,10 @@ public class StreamSamples {
         return LongStream.rangeClosed(1, n)
                 .reduce((left, right) -> left * right)
                 .getAsLong();
+    }
+
+    static boolean isPalindrome(String str) {
+        return IntStream.range(0, str.length() / 2)
+                .allMatch(x -> str.charAt(x) == str.charAt(str.length() - 1 - x));
     }
 }

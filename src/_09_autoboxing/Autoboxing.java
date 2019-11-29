@@ -1,7 +1,5 @@
 package _09_autoboxing;
 
-import org.omg.CORBA.IntHolder;
-
 public class Autoboxing {
 
 	public static void main(String[] args) {
@@ -30,9 +28,6 @@ public class Autoboxing {
 		Integer z = 5;
 		triple(z);
 		System.out.println("z = " + z);
-		IntHolder h = new IntHolder(5);
-		triple(h);
-		System.out.println("h = " + h.value);
 	}
 
 	public static void triple(int x) { // не сработает!
@@ -42,9 +37,4 @@ public class Autoboxing {
 	public static void triple(Integer x) { // не сработает!
 		x++; // попытка модифицировать локальную переменную
 	}
-
-	public static void triple(IntHolder x) { // сработает!
-		x.value++;
-	}
-	
 }
