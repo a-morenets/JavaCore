@@ -1,4 +1,4 @@
-package _20_multithreading._06_synchronized_operator;
+package _20_multithreading._06_synchronized_block;
 
 public class SynchOperatorExample {
 

@@ -14,7 +14,7 @@ public class AppMultipleNoCatch {
             if (true) {
                 throw new Error();
             } // и бросили новый Error
-        } catch (Error e) { // хотя есть cath по Error "ниже", но мы в него не попадаем
+        } catch (Error e) { // хотя есть catch по Error "ниже", но мы в него не попадаем
             System.err.print(" 3");
         }
         System.err.println(" 4");
